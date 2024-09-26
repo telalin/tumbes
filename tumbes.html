@@ -13,6 +13,7 @@
         body {
             font-family: Arial, sans-serif;
         }
+
         header {
             background-color: #00796b;
             color: white;
@@ -48,6 +49,65 @@
         .table-tour {
             margin-top: 20px;
         }
+        .carousel-container {
+            display: flex;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+
+        }
+
+        /* Estilos del carrusel */
+        .carousel {
+            width: 60%;
+            position: relative;
+        }
+
+            .carousel img {
+                width: 100%;
+                height: auto;
+                display: none;
+            }
+
+                .carousel img.active {
+                    display: block;
+                }
+
+        /* Botones de navegación */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        /* Estilos de la descripción */
+        .description {
+            width: 40%;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .description h2 {
+                margin-top: 0;
+            }
+
+            .description p {
+                margin-bottom: 0;
+            }
     </style>
 </head>
 <body>
@@ -107,51 +167,6 @@
         <div>¡Bienvenidos a Tumbes!</div>
     </div>
 
-    <!-- Carrusel de fotos -->
-    <section id="carrusel" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Descubre Tumbes</h2>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="manglar.jpg" width="1200" height="600" class="d-block w-100" alt="Manglares de Tumbes">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Manglares de Tumbes</h5>
-                            <p>Explora la biodiversidad de los manglares.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="playa.jpg" width="1200" height="600" class="d-block w-100" alt="Playa de Punta Sal">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Playa de Punta Sal</h5>
-                            <p>Relájate en las paradisíacas playas.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="amotape.jpg" width="1200" height="600"  class="d-block w-100" alt="Parque Nacional Cerros de Amotape">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Parque Nacional Cerros de Amotape</h5>
-                            <p>Caminatas en un espacio natural protegido.</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
     <!-- Sección: Destinos turísticos -->
     <section id="destinos" class="py-5 bg-light">
         <div class="container">
@@ -159,12 +174,12 @@
             <div class="row">
                 <div class="col-md-4">
                     <h3>Manglares de Tumbes</h3>
-                    <img src="manglar.jpg" width="600" height="400"  class="img-fluid rounded">
+                    <img src="manglar.jpg" width="600" height="400" class="img-fluid rounded">
                     <p>Explora la biodiversidad del Santuario Nacional Los Manglares de Tumbes, hogar de cocodrilos y aves exóticas.</p>
                 </div>
                 <div class="col-md-4">
                     <h3>Punta Sal</h3>
-                    <img src="playa.jpg" width="600" height="400"  class="img-fluid rounded">
+                    <img src="playa.jpg" width="600" height="400" class="img-fluid rounded">
                     <p>Relájate en las paradisíacas playas de Punta Sal y Zorritos, ideales para disfrutar del sol y actividades acuáticas.</p>
                 </div>
                 <div class="col-md-4">
@@ -184,12 +199,12 @@
                 <div class="col-md-6">
                     <h3>Ceviche de Conchas Negras</h3>
                     <p>Uno de los platos emblemáticos de Tumbes es el ceviche de conchas negras, elaborado con mariscos frescos directamente extraídos de los manglares. Su sabor único lo convierte en una delicia para los amantes de la cocina marina.</p>
-		<img src="ceviche.jpeg" width="300" height="160">
+                    <img src="ceviche.jpeg" width="300" height="160">
                 </div>
                 <div class="col-md-6">
                     <h3>Chilcano y Sudado de Pescado</h3>
                     <p>El chilcano y el sudado de pescado son otros dos platos tradicionales tumbesinos. Preparados con pescado fresco, estos platos destacan por su sabor intenso, sazonados con ajíes y especias locales.</p>
-		<img src="chilcano.jpeg" width="300" height="160">
+                    <img src="chilcano.jpeg" width="300" height="160">
                 </div>
             </div>
         </div>
@@ -203,17 +218,17 @@
                 <div class="col-md-4">
                     <h3>Observación de Aves</h3>
                     <p>Explora la rica avifauna en los manglares y parques nacionales, ideal para los amantes de la naturaleza y la fotografía.</p>
-		    <img src="aves.jpg" width="300" height="160">
+                    <img src="aves.jpg" width="300" height="160">
                 </div>
                 <div class="col-md-4">
                     <h3>Surf y Deportes Acuáticos</h3>
                     <p>Las playas de Punta Sal y Zorritos son perfectas para practicar surf, kitesurf y otros deportes acuáticos.</p>
-		    <img src="deporte.jpg" width="300" height="160">
+                    <img src="deporte.jpg" width="300" height="160">
                 </div>
                 <div class="col-md-4">
                     <h3>Excursiones en Kayak</h3>
                     <p>Navega por los manglares en kayak y descubre la flora y fauna de una manera única y cercana.</p>
-		    <img src="kayak.jpg" width="300" height="160">
+                    <img src="kayak.jpg" width="300" height="160">
                 </div>
             </div>
         </div>
@@ -305,78 +320,124 @@
     </section>
 
     <!-- Sección: Galería de Imágenes -->
+    <div class="container">
+        <h2 class="text-center mb-4">Galería</h2>
+    </div>
     <section id="galeria" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Galería</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="imagen1.jpg" width="400" height="300" alt="Galería 1" class="img-fluid rounded mb-2">
-                </div>
-                <div class="col-md-4">
-                    <img src="imagen2.jpg" width="400" height="300" alt="Galería 2" class="img-fluid rounded mb-2">
-                </div>
-                <div class="col-md-4">
-                    <img src="imagen3.jpg" width="400" height="300" alt="Galería 3" class="img-fluid rounded mb-2">
-                </div>
+        <div class="carousel-container">
+            <!-- Carrusel de imágenes -->
+            <div class="carousel">
+                <img src="tumbes.jpeg" width="400" height="300" alt="Tumbes" class="active">
+                <img src="playa.jpg" width="400" height="300" alt="Foto 2">
+                <img src="zorritos.jpeg" width="400" height="300" alt="Foto 3">
+                <img src="puerto_pizarro.jpg" width="400" height="300" alt="Foto 2">
+                <img src="plaza_armas.jpg" width="400" height="300" alt="Foto 3">
+                <img src="acapulco.jpg" width="400" height="300" alt="Foto 2">
+                <img src="grau.jpeg" width="400" height="300" alt="Foto 3">
+                <img src="faical.jpg" width="400" height="300" alt="Foto 2">
+                <img src="isla.jpg" width="400" height="300" alt="Foto 3">
+                <img src="bocapan.jpeg" width="400" height="300" alt="Foto 2">
+                <img src="agua_verde.jpg" width="400" height="300" alt="Foto 3">
+
+
+                <!-- Botones de navegación -->
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+
+            <!-- Descripción -->
+            <div class="description">
+                <h2 id="title">Tumbes</h2>
+                <p id="text">Tumbes es una ciudad peruana, capital del distrito, de la provincia y del departamento homónimos, situada en el extremo Noroeste del país.</p>
             </div>
         </div>
+
+
+        <script>
+            // JavaScript para controlar el carrusel
+            let currentSlide = 0;
+            const images = document.querySelectorAll('.carousel img');
+            const titles = ["Santuario Nacional Manglares de Tumbes", "Punta Sal", "Zorritos", "Puerto Pizarro", "Plaza de Armas de Tumbes", "Playa Acapulco", "Caleta Grau", "Quebrada Faical", "Isla de los Pájaros", "Playa Bocapán","Aguas Verdes"];
+            const descriptions = [
+                "Un ecosistema único con una gran diversidad de flora y fauna.",
+                "Una de las playas más hermosas y populares de la región.",
+                "Otra playa famosa, ideal para relajarse y disfrutar del mar.",
+                "Conocido por sus manglares y el criadero de cocodrilos.",
+                "El corazón de la ciudad, rodeado de importantes edificios históricos.",
+                "Una playa menos conocida pero igualmente hermosa.",
+                "Un pequeño puerto pesquero con encanto local.",
+                "Un lugar perfecto para los amantes de la naturaleza y el senderismo.",
+                "Un excelente lugar para la observación de aves.",
+                "Conocida por sus aguas tranquilas y arenas blancas.",
+                "Un lugar popular para relajarse y disfrutar de las aguas termales."
+            ];
+
+            function changeSlide(direction) {
+                images[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + direction + images.length) % images.length;
+                images[currentSlide].classList.add('active');
+                document.getElementById('title').innerText = titles[currentSlide];
+                document.getElementById('text').innerText = descriptions[currentSlide];
+            }
+        </script>
     </section>
 
-    <!-- Sección: Testimonios -->
-    <section id="testimonios" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Testimonios de Visitantes</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">"Tumbes es un lugar mágico, lleno de naturaleza y cultura. ¡Volveré!"</p>
-                       
-                    </blockquote>
-                </div>
-                <div class="col-md-4">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">"Las playas son espectaculares y la comida es deliciosa. Recomiendo el ceviche de conchas negras!"</p>
-                       
-                    </blockquote>
-                </div>
-                <div class="col-md-4">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">"Una experiencia única, lleno de aventura y belleza natural."</p>
-                       
-                    </blockquote>
+
+        <!-- Sección: Testimonios -->
+        <section id="testimonios" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Testimonios de Visitantes</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">"Tumbes es un lugar mágico, lleno de naturaleza y cultura. ¡Volveré!"</p>
+
+                        </blockquote>
+                    </div>
+                    <div class="col-md-4">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">"Las playas son espectaculares y la comida es deliciosa. Recomiendo el ceviche de conchas negras!"</p>
+
+                        </blockquote>
+                    </div>
+                    <div class="col-md-4">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">"Una experiencia única, lleno de aventura y belleza natural."</p>
+
+                        </blockquote>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sección: Contacto -->
-    <section id="contacto" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Contacto</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="mensaje" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
-    </section>
+        <!-- Sección: Contacto -->
+        <section id="contacto" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Contacto</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>© 2024 Turismo Tumbes | <a href="#contacto">Contáctanos</a></p>
-    </footer>
+        <!-- Pie de página -->
+        <footer>
+            <p>© 2024 Turismo Tumbes | <a href="#contacto">Contáctanos</a></p>
+        </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
